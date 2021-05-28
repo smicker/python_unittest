@@ -1,12 +1,12 @@
 # Testing python code with built in unittest lib
 
-### Prerequisites
-None
-
 The built in unittest lib is a great way of testing your python code with unit tests.
 However, pytest might be even better since with that you can select which tests to
 run by decorators and continue running where you stopped etc. But pytest requires
 intallation of pytest.
+
+### Prerequisites
+None
 
 ### Structure
 It is good practise to always name your files, that contains your test cases, starting
@@ -15,6 +15,7 @@ automatically find test files that is placed in subfolders, like in a "tests" su
 
 Lets say you have a structure like this:
 
+```
 project/
 |
 |-- src/
@@ -28,18 +29,23 @@ project/
 |
 |-- testing_my_program.py
 |-- do_test_my_program.py
+```
 
 my_program.py contains your program code. All other files contains unit tests.
 In this case you would be able to execute testing_my_program.py and do_test_my_program.py
-by just starting them like ./do_test_my_program.py.
+by just starting them like ./do_test_my_program.py from the project folder.
 But the unit tests in the tests folder cannot be executed like that since they are not
-able to include the my_program.py file because it is not in a subdirectory under the folder
-where the test file is located.
-The trick to execute test files in a subdir is to execute them with the command:
-```python -m unittest discover -s tests -t .```
+able to include the my_program.py file because my_program.py is not in a subdirectory under
+the folder where the test file is located.
+The trick to execute test files in a subdir is to execute them with the command:  
+```python -m unittest discover -s tests -t .```  
 The "discover" part will find all files starting with "test" and the -s will tell it to
 look for test files in the tests folder. -t will tell in which folder the test shall be
-executed in (I have not really made this work for other than .).
+executed in (I have not really made this work for other than "."). By giving it a dot the
+tests will be executed in the project folder, as if they were located here.
+The above command should in this case be executed from the project folder. This is a great
+way to execute tests since you can then separate different tests, like unit tests and
+integration tests in different folders and then choose which tests to execute.
 
 ### Source
 https://realpython.com/python-testing/
