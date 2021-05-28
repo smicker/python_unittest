@@ -47,6 +47,11 @@ class TestTask3(unittest.TestCase):
     def test_13_pos_math_9(self):
         self.assertEqual(task3.find_13_by_math(40013), 3, "Should be 3")
 
+    def test_13_pos_math_10(self):
+        # Test that you cannot enter a string to this function
+        with self.assertRaises(TypeError):
+            result = task3.find_13_by_math("40013")
+
 class TestTask4(unittest.TestCase):
     def test_13_pos_string_1(self):
         self.assertEqual(task3.find_13_by_string_conversion("413044"), 1, "Should be 1")
