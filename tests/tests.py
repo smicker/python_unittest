@@ -2,7 +2,7 @@
 
 # This is an example of how to create unit tests with the python built in unittest lib.
 # Each test class shall inherit from unittest.TestCase. All functions that starts with the
-# name test* inside such a function will be executed when calling unittest.main().
+# name test* inside such a class will be executed when calling unittest.main().
 # Functions not starting with test* will be ignored.
 # The classes that inherits from unittest.TestCase can be called whatever.
 
